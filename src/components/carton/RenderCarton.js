@@ -7,16 +7,19 @@ import { Canvas, extend, useThree, useFrame } from 'react-three-fiber'
 
 extend({OrbitControls})
 
+
+
+
 const OatSide = () => {
     const [model, setModel] = useState()
 
     useEffect(() => {
-        new GLTFLoader().load("/scene.gltf", setModel)
+        new GLTFLoader().load("/OatSideCarton.gltf", setModel)
     },[])
 
 
-    console.log(model)
-    return model? <primitive object={model.scene} /> : null
+
+    return model? <primitive object={model.scene} position={[0, -0.2, 0]} /> : null
     
 }
 
@@ -30,10 +33,8 @@ const Controls = () => {
     return(
         <orbitControls 
             autoRotate
-            maxPolarAngle={Math.PI / 3}
+            maxPolarAngle={Math.PI / 1}
             minPolarAngle={Math.PI / 2}
-            minDistance={13}
-            maxDistance={25}
             args={[camera, gl.domElement]}
             ref={orbitRef}
         />
