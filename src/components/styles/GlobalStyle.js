@@ -14,6 +14,7 @@ export const GlobalStyle = createGlobalStyle`
         -webkit-font-smoothing: antialiased;
         -ms-overflow-style: none;  /* IE and Edge */
         scrollbar-width: none;  /* Firefox */
+        overflow-x: hidden;
     }
 
     /* Hide scrollbar for Chrome, Safari and Opera */
@@ -24,5 +25,10 @@ export const GlobalStyle = createGlobalStyle`
     ::selection {
       background: black;
       color: white;
+    }
+
+    em, strong, i, b {
+      font-weight: normal;
+      font-style: normal;
     }
 `
