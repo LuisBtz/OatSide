@@ -4,7 +4,7 @@ import RenderCarton from "../components/carton/RenderCarton"
 import Layout from "../components/layout/layout"
 import Seo from "../components/layout/Seo"
 import { useStaticQuery, graphql } from "gatsby"
-import Press from "../components/sections/press"
+import Press from "../components/sections/Press"
 import Labels from "../components/sections/Labels"
 
 
