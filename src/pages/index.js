@@ -6,6 +6,7 @@ import Seo from "../components/layout/Seo"
 import { useStaticQuery, graphql } from "gatsby"
 import Press from "../components/sections/Press"
 import Labels from "../components/sections/Labels"
+import Products from "../components/sections/Products"
 
 
 
@@ -24,11 +25,44 @@ const IndexPage = () => {
               }
               labels {
                 image {
-                  gatsbyImageData(layout: FIXED, width: 90)
+                  gatsbyImageData(layout: FIXED)
                   alt
                 }
                 id
               }
+              # Product 1
+              imageProduct1 {
+                gatsbyImageData(layout: FULL_WIDTH, outputPixelDensities: 1.5)
+                alt
+              }
+              imageDescriptionProduct1 {
+                alt
+                gatsbyImageData(layout: FULL_WIDTH, outputPixelDensities: 1.5)
+              }
+              nameProduct1
+              descriptionProduct1
+              # Product 2
+              imageProduct2 {
+                gatsbyImageData(layout: FULL_WIDTH, outputPixelDensities: 1.5)
+                alt
+              }
+              imageDescriptionProduct2 {
+                alt
+                gatsbyImageData(layout: FULL_WIDTH, outputPixelDensities: 1.5)
+              }
+              nameProduct2
+              descriptionProduct2
+              # Product 3
+              imageProduct3 {
+                gatsbyImageData(layout: FULL_WIDTH, outputPixelDensities: 1.5)
+                alt
+              }
+              imageDescriptionProduct3 {
+                alt
+                gatsbyImageData(layout: FULL_WIDTH, outputPixelDensities: 1.5)
+              }
+              nameProduct3
+              descriptionProduct3
           }
       }
 `)
@@ -39,6 +73,7 @@ const IndexPage = () => {
       <RenderStyle data={data.datoCmsHome.homeDescription} />
       <Press data={data.datoCmsHome.logosSection} />
       <Labels data={data.datoCmsHome.labels} />
+      <Products data={data.datoCmsHome} />
     </Layout>
   )
 }

@@ -29,7 +29,6 @@ const ContainerLabels = styled.section`
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 100px;
     div {
         margin-right: 15px;
         margin-left: 15px;
