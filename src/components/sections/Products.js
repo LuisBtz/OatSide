@@ -49,54 +49,59 @@ const Descripcion3 = styled.div`
 `
 
 const Boton1 = styled.div`
+width: 180px;
 position: absolute;
 background-color: ${hidden1 ? 'var(--amarillo)' : 'none' };
 left: 0;
-top: -168px;
+top: -153px;
 padding: 50px 8%;
 border-radius: 25px 20px 0 0;
 cursor: pointer;
+text-align: center;
 p {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     border-radius: 50px;
     border: solid 1px black;
-    padding: 20px;
+    padding: 10px 32px;
     box-sizing: border-box;
 }
 `
 
 const Boton2 = styled.div`
-font-size: 1.5rem;
+width: 180px;
 position: absolute;
 left: 50%;
 transform: translateX(-50%);
-top: -168px;
+top: -143px;
 padding: 50px 8%;
 background-color: ${hidden2 ? 'var(--azul)' : 'none' };
 border-radius: 25px 20px 0 0;
 cursor: pointer;
+text-align: center;
 p {
+    font-size: 1.2rem;
     border-radius: 50px;
     border: solid 1px black;
-    padding: 20px;
+    padding: 10px 32px;
     box-sizing: border-box;
 }
 `
 
 const Boton3 = styled.div`
-font-size: 1.5rem;
+width: 180px;
+text-align: center;
 position: absolute;
 right: 0;
-top: -168px;
+top: -153px;
 padding: 50px 8%;
-/* background-color: var(--rojo); */
 background-color: ${hidden3 ? 'var(--rojo)' : 'none'};
 border-radius: 25px 20px 0 0;
 cursor: pointer;
 p {
+    font-size: 1.2rem;
     border-radius: 50px;
     border: solid 1px black;
-    padding: 20px;
+    padding: 10px 32px;
     box-sizing: border-box;
 }
 `

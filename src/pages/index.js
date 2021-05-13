@@ -7,6 +7,8 @@ import { useStaticQuery, graphql } from "gatsby"
 import Press from "../components/sections/Press"
 import Labels from "../components/sections/Labels"
 import Products from "../components/sections/Products"
+import Where from "../components/sections/Where"
+import Graphic from "../components/sections/Graphic"
 
 
 
@@ -63,6 +65,21 @@ const IndexPage = () => {
               }
               nameProduct3
               descriptionProduct3
+              # Where to buy
+              whereToBuyText
+              links {
+                id
+                text
+                url
+              }
+              graphic {
+                gatsbyImageData(
+                  layout: FULL_WIDTH
+                  outputPixelDensities: 1.5
+                  forceBlurhash: true
+                )
+                alt
+            }
           }
       }
 `)
@@ -74,6 +91,8 @@ const IndexPage = () => {
       <Press data={data.datoCmsHome.logosSection} />
       <Labels data={data.datoCmsHome.labels} />
       <Products data={data.datoCmsHome} />
+      <Where data={data.datoCmsHome} />
+      <Graphic data={data.datoCmsHome.graphic} />
     </Layout>
   )
 }
