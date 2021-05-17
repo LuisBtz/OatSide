@@ -20,6 +20,102 @@ const [hidden2, setHidden2] = useState(false);
 const [hidden3, setHidden3] = useState(false);
 
 
+  return (
+        <ContainerProducts>
+            <Cartones >
+                <Product>
+                    <ImageStyleCarton
+                        image={getDataImage1}
+                        alt={data.imageProduct1.alt ? data.imageProduct1.alt : 'Oatside Carton'}
+                    />
+                </Product>
+                <Product>
+                    <ImageStyleCarton
+                        image={getDataImage2}
+                        alt={data.imageProduct2.alt ? data.imageProduct2.alt : 'Oatside Carton'}
+                    />
+                </Product>
+                <Product>
+                    <ImageStyleCarton
+                        image={getDataImage3}
+                        alt={data.imageProduct3.alt ? data.imageProduct3.alt : 'Oatside Carton'}
+                    />
+                </Product>
+            </Cartones>
+
+            <Descripciones>
+                <Descripcion1 className={hidden1 ? 'clase1' : ''}>
+                    <Boton1 className='boton' onClick={ () => 
+                        {
+                            setHidden1(true)
+                            setHidden2(false) 
+                            setHidden3(false) 
+                        } 
+                    }
+                    >
+                        <p>{data.nameProduct1}</p>
+                    </Boton1>
+                        <Width1 className='width'>
+                            <Image className='image1'>
+                                <GatsbyImage
+                                    image={getDataImageDes1}
+                                    alt={data.imageDescriptionProduct1.alt ? data.imageDescriptionProduct1.alt : 'Oatside Image Description'}
+                                />
+                            </Image>
+                            <Texto dangerouslySetInnerHTML={{ __html: data.descriptionProduct1 }} />
+                        </Width1> 
+                </Descripcion1> 
+
+                <Descripcion2 className={hidden2 ? 'clase2' : ''}>
+                    <Boton2 className='boton' onClick={ () => 
+                        {
+                            setHidden2(true)
+                            setHidden1(false)
+                            setHidden3(false)
+                        } 
+                    }
+                    >
+                        <p>{data.nameProduct2}</p>
+                    </Boton2>
+                            <Width2 className='width'>
+                                <Image>
+                                    <GatsbyImage
+                                        image={getDataImageDes2}
+                                        alt={data.imageDescriptionProduct2.alt ? data.imageDescriptionProduct2.alt : 'Oatside Image Description'}
+                                    />
+                                </Image>
+                                <Texto dangerouslySetInnerHTML={{ __html: data.descriptionProduct2 }} />
+                            </Width2>
+                </Descripcion2>
+                <Descripcion3 className={hidden3 ? 'clase3' : ''}>
+                    <Boton3 className='boton' onClick={ () => 
+                        {
+                            setHidden3(true)
+                            setHidden1(false)
+                            setHidden2(false)
+                        } 
+                    }
+                    >
+                        <p>{data.nameProduct3}</p>
+                    </Boton3>
+                    <Width3 className='width'>
+                        <Image>
+                            <GatsbyImage
+                                image={getDataImageDes3}
+                                alt={data.imageDescriptionProduct3.alt ? data.imageDescriptionProduct3.alt : 'Oatside Image Description'}
+                            />
+                        </Image>
+                        <Texto dangerouslySetInnerHTML={{ __html: data.descriptionProduct3 }} />
+                    </Width3>
+                </Descripcion3>
+            </Descripciones>
+            
+        </ContainerProducts>
+
+  )
+}
+
+
 const ContainerProducts = styled.section`
 padding-top: 50px;
 width: 80%;
@@ -51,7 +147,7 @@ const Descripcion3 = styled.div`
 const Boton1 = styled.div`
 width: 180px;
 position: absolute;
-background-color: ${hidden1 ? 'var(--amarillo)' : 'none' };
+background-color: none;
 left: 0;
 top: -153px;
 padding: 50px 8%;
@@ -74,7 +170,7 @@ left: 50%;
 transform: translateX(-50%);
 top: -143px;
 padding: 50px 8%;
-background-color: ${hidden2 ? 'var(--azul)' : 'none' };
+background-color: none;
 border-radius: 25px 20px 0 0;
 cursor: pointer;
 text-align: center;
@@ -94,7 +190,7 @@ position: absolute;
 right: 0;
 top: -153px;
 padding: 50px 8%;
-background-color: ${hidden3 ? 'var(--rojo)' : 'none'};
+background-color: none;
 border-radius: 25px 20px 0 0;
 cursor: pointer;
 p {
@@ -108,7 +204,7 @@ p {
 
 const Width1 = styled.div`
 background-color: var(--amarillo);
-display: ${hidden1 ? 'flex' : 'none' };
+display: none;
 padding: 50px;
 box-sizing: border-box;
 border-radius: 0 25px 25px 25px;
@@ -116,7 +212,7 @@ border-radius: 0 25px 25px 25px;
 
 const Width2 = styled.div`
 background-color: var(--azul);
-display: ${hidden2 ? 'flex' : 'none' };
+display: none;
 padding: 50px;
 box-sizing: border-box;
 border-radius: 25px 25px 25px 25px;
@@ -124,7 +220,7 @@ border-radius: 25px 25px 25px 25px;
 
 const Width3 = styled.div`
 background-color: var(--rojo);
-display: ${hidden3 ? 'flex' : 'none'};
+display: none;
 padding: 50px;
 box-sizing: border-box;
 border-radius: 25px 0 25px 25px;
@@ -147,105 +243,35 @@ font-family: var(--akMed)
 const Descripciones = styled.div`
 margin-top: 150px;
 position: relative;
+
+.clase1 {
+    .boton {
+        background-color: var(--amarillo);
+    }
+    .width {
+        display: flex;
+    }
+}
+
+.clase2 {
+    .boton {
+        background-color: var(--azul);
+    }
+    .width {
+        display: flex;
+    }
+}
+
+.clase3 {
+    .boton {
+        background-color: var(--rojo);
+    }
+    .width {
+        display: flex;
+    }
+}
 `
 
-
-
-
-  return (
-        <ContainerProducts>
-            <Cartones >
-                <Product>
-                    <ImageStyleCarton
-                        image={getDataImage1}
-                        alt={data.imageProduct1.alt ? data.imageProduct1.alt : 'Oatside Carton'}
-                    />
-                </Product>
-                <Product>
-                    <ImageStyleCarton
-                        image={getDataImage2}
-                        alt={data.imageProduct2.alt ? data.imageProduct2.alt : 'Oatside Carton'}
-                    />
-                </Product>
-                <Product>
-                    <ImageStyleCarton
-                        image={getDataImage3}
-                        alt={data.imageProduct3.alt ? data.imageProduct3.alt : 'Oatside Carton'}
-                    />
-                </Product>
-            </Cartones>
-
-            <Descripciones>
-                <Descripcion1>
-                    <Boton1 onClick={ () => 
-                        {
-                            setHidden1(true)
-                            setHidden2(false) 
-                            setHidden3(false) 
-                        } 
-                    }
-                    >
-                        <p>{data.nameProduct1}</p>
-                    </Boton1>
-                        <Width1 className='width1'>
-                            <Image className='image1'>
-                                <GatsbyImage
-                                    image={getDataImageDes1}
-                                    alt={data.imageDescriptionProduct1.alt ? data.imageDescriptionProduct1.alt : 'Oatside Image Description'}
-                                />
-                            </Image>
-                            <Texto dangerouslySetInnerHTML={{ __html: data.descriptionProduct1 }} />
-                        </Width1> 
-                </Descripcion1> 
-
-                <Descripcion2>
-                    <Boton2 onClick={ () => 
-                        {
-                            setHidden2(true)
-                            setHidden1(false)
-                            setHidden3(false)
-                        } 
-                    }
-                    >
-                        <p>{data.nameProduct2}</p>
-                    </Boton2>
-                            <Width2 className='width2'>
-                                <Image>
-                                    <GatsbyImage
-                                        image={getDataImageDes2}
-                                        alt={data.imageDescriptionProduct2.alt ? data.imageDescriptionProduct2.alt : 'Oatside Image Description'}
-                                    />
-                                </Image>
-                                <Texto dangerouslySetInnerHTML={{ __html: data.descriptionProduct2 }} />
-                            </Width2>
-                </Descripcion2>
-                <Descripcion3 className='descripcion3'>
-                    <Boton3 onClick={ () => 
-                        {
-                            setHidden3(true)
-                            setHidden1(false)
-                            setHidden2(false)
-                        } 
-                    }
-                    >
-                        <p>{data.nameProduct3}</p>
-                    </Boton3>
-                    <Width3>
-                        <Image>
-                            <GatsbyImage
-                                image={getDataImageDes3}
-                                alt={data.imageDescriptionProduct3.alt ? data.imageDescriptionProduct3.alt : 'Oatside Image Description'}
-                            />
-                        </Image>
-                        <Texto dangerouslySetInnerHTML={{ __html: data.descriptionProduct3 }} />
-                    </Width3>
-                </Descripcion3>
-            </Descripciones>
-            
-        </ContainerProducts>
-
-  )
-}
 
 
 

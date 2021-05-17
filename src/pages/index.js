@@ -81,6 +81,18 @@ const IndexPage = () => {
                 alt
             }
           }
+          # allInstaNode {
+          #   edges {
+          #     node {
+          #       localFile {
+          #         childImageSharp {
+          #           gatsbyImageData(layout: FULL_WIDTH)
+          #         }
+          #       }
+          #       id
+          #     }
+          #   }
+          # }
       }
 `)
 
