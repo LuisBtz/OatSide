@@ -40,7 +40,7 @@ const middleTextInHeader = data.datoCmsSetting.middleTextInHeader;
 }
 
 const NavStyles = styled.nav`
-padding: 20px;
+padding: 20px 50px;
 box-sizing: border-box;
 width: 100%;
   ul {
@@ -53,6 +53,7 @@ const First = styled.li`
   font-family: var(--akMed);
   text-transform: uppercase;
   align-self: center;
+  font-size: 0.8rem;
 `
 const Middle = styled.li`
   align-self: center;
@@ -66,6 +67,7 @@ const Final = styled.li`
   align-self: center;
   justify-self: end;
   font-family: var(--akMed);
+  font-size: 0.8rem;
 `
 
 const Logo = styled.img`

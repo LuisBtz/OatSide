@@ -87,7 +87,7 @@ const IndexPage = () => {
             }
           }
           # Instagram
-          allInstagramContent {
+          allInstagramContent(sort: {order: DESC, fields: timestamp}) {
             edges {
               node {
                 localImage {
