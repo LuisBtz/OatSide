@@ -6633,7 +6633,7 @@ gatsby-source-datocms@^2.6.15:
     regenerator-runtime "^0.13.3"
     unist-util-visit "^2.0.3"
 
-gatsby-source-filesystem@^3.4.0:
+gatsby-source-filesystem@^3.0.0, gatsby-source-filesystem@^3.4.0:
   version "3.5.0"
   resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-3.5.0.tgz#b25645c663a8c188dece11de6c9ace5872316180"
   integrity sha512-o0JGFGHwjqgy1IciifMoMek/ulpO/lvwhpAxxjpDl3vqzO6beoAdaLrLe6zRn403XXSA14TDP9KUNfePLlp1lg==
@@ -6651,6 +6651,15 @@ gatsby-source-filesystem@^3.4.0:
     progress "^2.0.3"
     valid-url "^1.0.9"
     xstate "^4.14.0"
+
+gatsby-source-instagram-all@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/gatsby-source-instagram-all/-/gatsby-source-instagram-all-4.2.0.tgz#f06b47dbe75676c4f61de99d8b16dd4ca22cf00b"
+  integrity sha512-GiId9JxewRD1GeQxPP8ez5hGVSj30MKDFR+6Q8Xw3x3l21zzKWFbkGv2wbhKmqboNoEaUVXthmPTdqOnaIyHnQ==
+  dependencies:
+    gatsby-source-filesystem "^3.0.0"
+    node-fetch "^2.6.1"
+    query-string "^7.0.0"
 
 gatsby-source-instagram@^0.9.0:
   version "0.9.0"
@@ -11244,6 +11253,16 @@ query-string@^5.0.1:
     decode-uri-component "^0.2.0"
     object-assign "^4.1.0"
     strict-uri-encode "^1.0.0"
+
+query-string@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/query-string/-/query-string-7.0.0.tgz#aaad2c8d5c6a6d0c6afada877fecbd56af79e609"
+  integrity sha512-Iy7moLybliR5ZgrK/1R3vjrXq03S13Vz4Rbm5Jg3EFq1LUmQppto0qtXz4vqZ386MSRjZgnTSZ9QC+NZOSd/XA==
+  dependencies:
+    decode-uri-component "^0.2.0"
+    filter-obj "^1.1.0"
+    split-on-first "^1.0.0"
+    strict-uri-encode "^2.0.0"
 
 querystring@0.2.0:
   version "0.2.0"

@@ -9,6 +9,7 @@ import Labels from "../components/sections/Labels"
 import Products from "../components/sections/Products"
 import Where from "../components/sections/Where"
 import Graphic from "../components/sections/Graphic"
+import Instagram from "../components/sections/Instagram"
 
 
 
@@ -72,8 +73,12 @@ const IndexPage = () => {
                 text
                 url
               }
-              graphic {
-                gatsbyImageData(
+          }
+          # Settings
+          datoCmsSetting {
+            socialMediaPostsText
+            illustration {
+              gatsbyImageData(
                   layout: FULL_WIDTH
                   outputPixelDensities: 1.5
                   forceBlurhash: true
@@ -81,18 +86,20 @@ const IndexPage = () => {
                 alt
             }
           }
-          # allInstaNode {
-          #   edges {
-          #     node {
-          #       localFile {
-          #         childImageSharp {
-          #           gatsbyImageData(layout: FULL_WIDTH)
-          #         }
-          #       }
-          #       id
-          #     }
-          #   }
-          # }
+          # Instagram
+          allInstagramContent {
+            edges {
+              node {
+                localImage {
+                  childImageSharp {
+                    gatsbyImageData(layout: FULL_WIDTH, outputPixelDensities: 1.5)
+                  }
+                }
+              id
+              permalink
+              }
+            }
+          }
       }
 `)
 
@@ -104,7 +111,8 @@ const IndexPage = () => {
       <Labels data={data.datoCmsHome.labels} />
       <Products data={data.datoCmsHome} />
       <Where data={data.datoCmsHome} />
-      <Graphic data={data.datoCmsHome.graphic} />
+      <Graphic data={data.datoCmsSetting.illustration} />
+      <Instagram data={data.allInstagramContent.edges} insta={data.datoCmsSetting} />
     </Layout>
   )
 }

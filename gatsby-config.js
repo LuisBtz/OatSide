@@ -65,10 +65,10 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
     {
-      resolve: `gatsby-source-instagram`,
+      resolve: `gatsby-source-instagram-all`,
       options: {
-        username: `4516997694`,
-      },
-    },
+        access_token: process.env.INSTA,
+      }
+ }
   ],
 }

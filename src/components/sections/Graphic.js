@@ -18,7 +18,7 @@ const Where = ({data}) => {
 
 const ContainerGraphic = styled.section`
     width: 80%;
-    margin: 100px auto;
+    margin: 100px auto 50px;
 `
 
 export default Where
