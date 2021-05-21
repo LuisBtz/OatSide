@@ -146,6 +146,10 @@ const Sidebar = styled.div`
   box-sizing: border-box;
   z-index: 2;
   transition: all 350ms ease-in-out;
+  @media (max-width: 650px) {
+    right: -70%;
+    width: 70%;
+  }
 `
 
 const Item = styled.div`

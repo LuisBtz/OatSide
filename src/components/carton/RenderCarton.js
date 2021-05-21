@@ -75,9 +75,14 @@ const Text = styled.h1`
 width: 500px;
 text-align: center;
 margin: 0px auto 0 auto;
-
+font-size: 2rem;
 i, em, strong {
     font-family: var(--akMed)
+}
+
+@media (max-width: 640px) {
+    font-size: 1.5rem;
+    width: 90%;
 }
 
 `

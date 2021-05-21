@@ -52,11 +52,18 @@ const FooterStyle = styled.footer`
   .copy {
     font-size: 0.8rem;
   }
+  @media (max-width: 750px) {
+    flex-direction: column-reverse;
+    .copy {
+      text-align: center;
+    }
+  }
 `
 
 const Social = styled.div`
   display: flex;
   width: auto;
+  margin-bottom: 50px;
 `
 
 const ItemStyle = styled.a`

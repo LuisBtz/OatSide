@@ -161,6 +161,16 @@ p {
     padding: 10px 32px;
     box-sizing: border-box;
 }
+
+@media (max-width: 750px) {
+    width: 90px;
+    top: -90px;
+    padding: 25px 20px;
+    p {
+        font-size: 0.8rem;
+        padding: 5px 10px;
+    }
+}
 `
 
 const Boton2 = styled.div`
@@ -181,6 +191,16 @@ p {
     padding: 10px 32px;
     box-sizing: border-box;
 }
+@media (max-width: 750px) {
+    width: 90px;
+    position: absolute;
+    top: -85px;
+    padding: 25px 20px 40px;
+    p {
+        font-size: 0.8rem;
+        padding: 5px 10px;
+    }
+}
 `
 
 const Boton3 = styled.div`
@@ -200,7 +220,17 @@ p {
     padding: 10px 32px;
     box-sizing: border-box;
 }
+@media (max-width: 750px) {
+    width: 90px;
+    top: -90px;
+    padding: 25px 20px;
+    p {
+        font-size: 0.8rem;
+        padding: 5px 10px;
+    }
+}
 `
+
 
 const Width1 = styled.div`
 background-color: var(--amarillo);
@@ -208,6 +238,10 @@ display: none;
 padding: 50px;
 box-sizing: border-box;
 border-radius: 0 25px 25px 25px;
+@media (max-width: 750px) {
+    flex-direction: column;
+    padding: 30px;
+}
 `
 
 const Width2 = styled.div`
@@ -216,6 +250,10 @@ display: none;
 padding: 50px;
 box-sizing: border-box;
 border-radius: 25px 25px 25px 25px;
+@media (max-width: 750px) {
+    flex-direction: column;
+    padding: 30px;
+}
 `
 
 const Width3 = styled.div`
@@ -224,21 +262,33 @@ display: none;
 padding: 50px;
 box-sizing: border-box;
 border-radius: 25px 0 25px 25px;
+@media (max-width: 750px) {
+    flex-direction: column;
+    padding: 30px;
+}
 `
 
 const Image = styled.div`
 width: 30%;
+@media (max-width: 750px) {
+    width: 100%;
+}
 `
 
 const Texto = styled.div`
-align-self: center;
-text-align: center;
-width: 50%;
-margin: 0 auto;
-font-size: 1.5rem;
-strong, b {
-font-family: var(--akMed)
-}
+    align-self: center;
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+    font-size: 1.5rem;
+    strong, b {
+        font-family: var(--akMed)
+    }
+    @media (max-width: 750px) {
+        width: 100%;
+        margin-top: 50px;
+        margin-bottom: 20px;
+    }
 `
 const Descripciones = styled.div`
 margin-top: 150px;

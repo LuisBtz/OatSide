@@ -30,6 +30,7 @@ const ContainerLabels = styled.section`
     justify-content: center;
     align-items: center;
     div {
+        width: 100px;
         margin-right: 15px;
         margin-left: 15px;
     }

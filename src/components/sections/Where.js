@@ -41,6 +41,14 @@ const Links = styled.ul`
         border-radius: 20px;
         box-sizing: border-box;
     }
+@media (max-width: 750px) {
+    flex-direction: column;
+    align-items: center;
+    li {
+        margin-bottom: 10px;
+        width: 150px;
+    }
+}
 `
 
 export default Where

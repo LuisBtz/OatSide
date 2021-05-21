@@ -28,7 +28,7 @@ const IndexPage = () => {
               }
               labels {
                 image {
-                  gatsbyImageData(layout: FIXED)
+                  gatsbyImageData(layout: FULL_WIDTH)
                   alt
                 }
                 id
@@ -87,7 +87,7 @@ const IndexPage = () => {
             }
           }
           # Instagram
-          allInstagramContent(sort: {order: DESC, fields: timestamp}) {
+          allInstagramContent {
             edges {
               node {
                 localImage {
