@@ -120,6 +120,11 @@ const ContainerProducts = styled.section`
 padding-top: 50px;
 width: 80%;
 margin: 0 auto;
+@media (max-width: 750px) {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
 `
 
 const Cartones = styled.div`

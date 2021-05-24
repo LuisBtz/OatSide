@@ -19,6 +19,11 @@ const Where = ({data}) => {
 const ContainerGraphic = styled.section`
     width: 80%;
     margin: 100px auto 50px;
+    @media (max-width: 750px) {
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+    }
 `
 
 export default Where

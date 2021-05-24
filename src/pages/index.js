@@ -8,8 +8,9 @@ import Press from "../components/sections/Press"
 import Labels from "../components/sections/Labels"
 import Products from "../components/sections/Products"
 import Where from "../components/sections/Where"
-import Graphic from "../components/sections/Graphic"
-import Instagram from "../components/sections/Instagram"
+// import Graphic from "../components/sections/Graphic"
+// import Instagram from "../components/sections/Instagram"
+// import Sliderr from "../components/sections/Sliderr"
 
 
 
@@ -86,20 +87,6 @@ const IndexPage = () => {
                 alt
             }
           }
-          # Instagram
-          allInstagramContent {
-            edges {
-              node {
-                localImage {
-                  childImageSharp {
-                    gatsbyImageData(layout: FULL_WIDTH, outputPixelDensities: 1.5)
-                  }
-                }
-              id
-              permalink
-              }
-            }
-          }
       }
 `)
 
@@ -110,9 +97,10 @@ const IndexPage = () => {
       <Press data={data.datoCmsHome.logosSection} />
       <Labels data={data.datoCmsHome.labels} />
       <Products data={data.datoCmsHome} />
+      {/* <Sliderr /> */}
       <Where data={data.datoCmsHome} />
-      <Graphic data={data.datoCmsSetting.illustration} />
-      <Instagram data={data.allInstagramContent.edges} insta={data.datoCmsSetting} />
+      {/* <Graphic data={data.datoCmsSetting.illustration} /> */}
+      {/* <Instagram data={data.allInstagramContent.edges} insta={data.datoCmsSetting} /> */}
     </Layout>
   )
 }

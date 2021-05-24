@@ -1,6 +1,8 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import styled from 'styled-components';
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
+
 
 
 // markup
@@ -18,26 +20,81 @@ const Footer = () => {
             alt
           }
         }
+        socialMediaPostsText
+            illustration {
+              gatsbyImageData(
+                  layout: FULL_WIDTH
+                  outputPixelDensities: 1.5
+                  forceBlurhash: true
+                )
+                alt
+            }
       }
+      datoCmsSetting {
+        socialMediaPostsText
+      }
+      # Instagram
+      allInstagramContent {
+            edges {
+              node {
+                localImage {
+                  childImageSharp {
+                    gatsbyImageData(layout: FULL_WIDTH, outputPixelDensities: 1.5)
+                  }
+                }
+              id
+              permalink
+              }
+            }
+          }
     }
   `)
 
+const getDataImage = getImage(data.datoCmsSetting.illustration);
+
   return (
-    <FooterStyle>
-      <div className='copy' dangerouslySetInnerHTML={{ __html: data.datoCmsSetting.copyrightFooter }} />
-      <Social>
-        {data.datoCmsSetting.socialMedia.map(({image, link, id}) => {
-              return (
-                  <ItemStyle key={id} href={link} target='_blank' rel="noreferrer" >
-                          <img
-                              src={image.url}
-                              alt={image.alt ? image.alt : 'Oatside Social Network'}
-                          />
-                  </ItemStyle>
-              )
-        })}
-      </Social>
-    </FooterStyle>
+    <>
+      <ContainerGraphic>
+        <GatsbyImage
+            image={getDataImage}
+            alt={data.datoCmsSetting.illustration.alt ? data.datoCmsSetting.illustration.alt : 'Oatside Graphic'}
+        />
+      </ContainerGraphic>
+
+      <ContainerInsta>
+            <h2 dangerouslySetInnerHTML={{ __html: data.datoCmsSetting.socialMediaPostsText }} />
+            <CotenedorImages>
+            {data.allInstagramContent.edges.slice(0, 4).map(({node}) => {
+                  const getDataImage = getImage(node.localImage.childImageSharp);
+            return (
+                <Item href={node.permalink} target='_blank' rel="noreferrer" key={node.id} >
+                        <GatsbyImage
+                            image={getDataImage}
+                            alt='Oatside Image Instagram'
+                        />
+                </Item>
+            )
+            })}
+            </CotenedorImages>
+        </ContainerInsta>
+        
+      <FooterStyle>
+        <div className='copy' dangerouslySetInnerHTML={{ __html: data.datoCmsSetting.copyrightFooter }} />
+        <Social>
+          {data.datoCmsSetting.socialMedia.map(({image, link, id}) => {
+                return (
+                    <ItemStyle key={id} href={link} target='_blank' rel="noreferrer" >
+                            <img
+                                src={image.url}
+                                alt={image.alt ? image.alt : 'Oatside Social Network'}
+                            />
+                    </ItemStyle>
+                )
+          })}
+        </Social>
+      </FooterStyle>
+    </>
+    
   )
 }
 
@@ -76,6 +133,41 @@ const ItemStyle = styled.a`
     width: auto;
     height: 16px;
   }
+`
+
+
+const ContainerGraphic = styled.section`
+    width: 80%;
+    margin: 100px auto 50px;
+    @media (max-width: 750px) {
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+`
+
+
+const ContainerInsta = styled.section`
+    padding: 20px;
+    margin: 50px auto 100px;
+    h2 {
+        text-align: center;
+        margin-bottom: 50px;
+        a {
+            text-decoration: underline;
+        }
+    }
+`
+
+const CotenedorImages = styled.div`
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+`
+
+const Item = styled.a`
+    width: 100%;
+    align-self: center;
 `
 
 

@@ -1,75 +1,88 @@
-import React, {useState, useRef, useEffect} from 'react'
+import React, { Component} from 'react'
 import * as THREE from 'three'
 import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls'
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader"
-import { Canvas, extend, useThree, useFrame } from 'react-three-fiber'
 import styled from 'styled-components'
 
 
-extend({OrbitControls})
+class RenderCarton extends Component {
+	componentDidMount() {
+		// === THREE.JS CODE START ===
+		var mixer;
+
+		var gltfLoader = new GLTFLoader();
+		var scene = new THREE.Scene();
+		
+		var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 1000 );
+		camera.position.set( 0, 0, 2 );
+
+		var renderer = new THREE.WebGLRenderer({alpha:true,antialias:true});
+		renderer.setPixelRatio( window.devicePixelRatio );
+		renderer.setSize( window.innerWidth, window.innerHeight );
+		this.mount.appendChild( renderer.domElement );
+
+		var hemiLight = new THREE.HemisphereLight( 0xffffff, 0xa6a6a6 );
+		hemiLight.position.set( 0, 20, 0 );
+		scene.add( hemiLight );
+
+        var dirLight = new THREE.DirectionalLight( 0xffffff,0.09 );
+        dirLight.position.set( - 3, 10, -10 );
+        scene.add( dirLight );
+        
+        var dirLight2 = new THREE.DirectionalLight( 0xffffff ,0.09);
+        dirLight2.position.set( 3, 10, -10 );
+        scene.add( dirLight2 );
+
+		gltfLoader.load( '/OatSideCarton_Animated.gltf', gltf => {
+            gltf.scene.rotation.y +=Math.PI/3;
+            gltf.scene.position.y = -2;
+            gltf.scene.scale.set(3.5,3.5,3.5); // Size
+			scene.add( gltf.scene );
+
+			mixer = new THREE.AnimationMixer( gltf.scene );
+			mixer.clipAction( gltf.animations[0] ).play();
+
+		} );
 
 
+		const controls = new OrbitControls( camera, renderer.domElement );
+        controls.update();
+        controls.enablePan = false;
+        controls.enableZoom = false;
+        controls.maxPolarAngle= Math.PI / 2.5
+        controls.minPolarAngle= Math.PI / 2.5
 
+		const clock = new THREE.Clock();
 
-const OatSide = () => {
-    const [model, setModel] = useState()
+		function animate() {
 
-    useEffect(() => {
-        new GLTFLoader().load("/OatSideCarton.gltf", setModel)
-    },[])
+			requestAnimationFrame( animate );
 
+			var delta = clock.getDelta();
 
+			if ( mixer ) mixer.update( delta );
 
-    return model? <primitive object={model.scene} position={[0, -0.29, 0]} rotation={[0.2,1,0]} /> : null
-    
+			renderer.render(scene,camera);
+            controls.update();
+
+		}
+
+		animate();
+
+		// === THREE.JS CODE END ===
+
+	}
+
+	render() {
+		return (
+			<>
+				<div ref={ref => (this.mount = ref)} />
+				<Text dangerouslySetInnerHTML={{ __html: this.props.data }} />
+            </>
+		)
+	}
+
 }
-
-const Controls = () => {
-    const orbitRef = useRef()
-    const {camera, gl } = useThree()
-
-    useFrame(()=> { orbitRef.current.update() })
-
-
-    return(
-        <orbitControls 
-            autoRotate
-            autoRotateSpeed={6}
-            enableZoom={false}
-            maxPolarAngle={Math.PI / 3}
-            minPolarAngle={Math.PI / 3}
-            args={[camera, gl.domElement]}
-            ref={orbitRef}
-        />
-    )
-}
-
-
-
-
-const RenderCarton = ({data}) => (
-    <Container>
-        <Canvas
-        camera={{ position: [0, 0, 0.42] }}
-        onCreated={({ gl }) => {
-            gl.shadowMap.enabled = true
-            gl.shadowMap.type = THREE.PCFSoftShadowMap
-        }}
-        >
-            <ambientLight intensity={0.5} />
-            <spotLight position={[15, 20, 5]} penumbra={1} castShadow />
-            <Controls />
-            {/* <Box /> */}
-            {/* <Plane /> */}
-            <OatSide />
-        </Canvas>
-        <Text dangerouslySetInnerHTML={{ __html: data }} />
-    </Container>
-)
-
-const Container = styled.div`
-position: relative;
-`
 
 const Text = styled.h1`
 width: 500px;

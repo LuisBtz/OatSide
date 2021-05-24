@@ -90,6 +90,9 @@ width: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr)
   }
+  @media (max-width: 750px) {
+    padding: 20px 20px;
+  }
 `
 
 const First = styled.li`
@@ -104,6 +107,9 @@ const Middle = styled.li`
   text-align: center;
   font-size: 1.2rem;
   width: 100px;
+  @media (max-width: 750px) {
+    font-size: 1rem;
+  }
 `
 
 const Final = styled.li`
@@ -116,6 +122,7 @@ const Final = styled.li`
 const Logo = styled.img`
   width: 60%;
   position: absolute;
+  z-index: -1;
   top: 100px;
   left: 50%;
   transform: translateX(-50%);
@@ -126,6 +133,10 @@ const Label = styled.img`
   left: -80px;
   width: 80px;
   cursor: pointer;
+  @media (max-width: 750px) {
+    left: -65px;
+    width: 70px;
+  }
 `
 const Imagenes = styled.div`
   overflow-y: scroll;
