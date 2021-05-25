@@ -115,6 +115,11 @@ const FooterStyle = styled.footer`
       text-align: center;
     }
   }
+  @media (min-width:  1400px) {
+    .copy {
+      font-size: 2rem;
+    }
+  }
 `
 
 const Social = styled.div`

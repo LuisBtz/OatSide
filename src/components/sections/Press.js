@@ -41,8 +41,7 @@ const Press = ({data}) => {
 }
 
 const ContainerPress = styled.ul`
-    margin-top: 100px;
-    margin-bottom: 100px;
+    margin-bottom: 150px;
     display: flex;
     align-items: center;
     list-style: none;

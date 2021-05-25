@@ -34,7 +34,7 @@ class RenderCarton extends Component {
         scene.add( dirLight2 );
 
 		gltfLoader.load( '/OatSideCarton_Animated.gltf', gltf => {
-            gltf.scene.rotation.y +=Math.PI/3;
+            gltf.scene.rotation.y +=Math.PI/2.5;
             gltf.scene.position.y = -2;
             gltf.scene.scale.set(3.5,3.5,3.5); // Size
 			scene.add( gltf.scene );
@@ -85,15 +85,19 @@ class RenderCarton extends Component {
 }
 
 const Text = styled.h1`
-width: 500px;
+position: absolute;
+top: 80%;
+left: 50%;
+transform: translateX(-50%);
+width: 40%;
 text-align: center;
 margin: 0px auto 0 auto;
-font-size: 2rem;
+font-size: 2.5vw;
 i, em, strong {
     font-family: var(--akMed)
 }
 
-@media (max-width: 640px) {
+@media (max-width: 740px) {
     font-size: 1.5rem;
     width: 90%;
 }

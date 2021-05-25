@@ -51,7 +51,7 @@ const [show, setShow] = useState(false);
             </Final>
           </ul>
         </NavStyles>
-        <Logo src={logo} />
+          <Logo src={logo} alt='Logo Oatside' />
     </header>
     <Sidebar className={show ? 'show' : '' }>
       <Label src='/label.svg' alt='label oatside' 
@@ -100,6 +100,9 @@ const First = styled.li`
   text-transform: uppercase;
   align-self: center;
   font-size: 0.8rem;
+  @media (min-width:  1400px) {
+    font-size: 2rem;
+  }
 `
 const Middle = styled.li`
   align-self: center;
@@ -110,6 +113,9 @@ const Middle = styled.li`
   @media (max-width: 750px) {
     font-size: 1rem;
   }
+  @media (min-width:  1400px) {
+    font-size: 2rem;
+  }
 `
 
 const Final = styled.li`
@@ -117,6 +123,9 @@ const Final = styled.li`
   justify-self: end;
   font-family: var(--akMed);
   font-size: 0.8rem;
+  @media (min-width:  1400px) {
+    font-size: 2rem;
+  }
 `
 
 const Logo = styled.img`
@@ -141,7 +150,7 @@ const Label = styled.img`
 const Imagenes = styled.div`
   overflow-y: scroll;
   height: 100vh;
-  padding-bottom: 100%;
+  padding-bottom: 200%;
   box-sizing: border-box;
 `
 
