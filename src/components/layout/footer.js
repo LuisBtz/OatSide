@@ -138,6 +138,11 @@ const ItemStyle = styled.a`
     width: auto;
     height: 16px;
   }
+  @media (min-width: 1500px) {
+    img {
+      width: 30px;
+    }
+  }
 `
 
 
@@ -161,6 +166,12 @@ const ContainerInsta = styled.section`
         a {
             text-decoration: underline;
         }
+    }
+    @media (min-width: 1400px) {
+      padding: 100px 20px;
+      h2 {
+        margin-bottom: 150px;
+      }
     }
 `
 
