@@ -18,7 +18,7 @@ export const GlobalStyle = createGlobalStyle`
         -ms-overflow-style: none;  /* IE and Edge */
         scrollbar-width: none;  /* Firefox */
         overflow-x: hidden;
-        @media (min-width:  1400px) {
+        @media (min-width:  1500px) {
           font-size: 30px;
         }
     }

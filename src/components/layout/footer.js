@@ -115,7 +115,7 @@ const FooterStyle = styled.footer`
       text-align: center;
     }
   }
-  @media (min-width:  1400px) {
+  @media (min-width:  1500px) {
     .copy {
       font-size: 2rem;
     }
@@ -167,7 +167,7 @@ const ContainerInsta = styled.section`
             text-decoration: underline;
         }
     }
-    @media (min-width: 1400px) {
+    @media (min-width: 1500px) {
       padding: 100px 20px;
       h2 {
         margin-bottom: 150px;

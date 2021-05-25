@@ -100,7 +100,7 @@ const First = styled.li`
   text-transform: uppercase;
   align-self: center;
   font-size: 0.8rem;
-  @media (min-width:  1400px) {
+  @media (min-width:  1500px) {
     font-size: 2rem;
   }
 `
@@ -113,7 +113,7 @@ const Middle = styled.li`
   @media (max-width: 750px) {
     font-size: 1rem;
   }
-  @media (min-width:  1400px) {
+  @media (min-width:  1500px) {
     font-size: 2rem;
   }
 `
@@ -123,7 +123,7 @@ const Final = styled.li`
   justify-self: end;
   font-family: var(--akMed);
   font-size: 0.8rem;
-  @media (min-width:  1400px) {
+  @media (min-width:  1500px) {
     font-size: 2rem;
   }
 `
