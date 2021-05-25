@@ -14,10 +14,18 @@ import Where from "../components/sections/Where"
 
 
 
+
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
   query  {
           datoCmsHome {
+              seo {
+                title
+                description
+                image {
+                  url
+                }
+              }
               homeDescription
               logosSection {
                   image {
@@ -92,7 +100,7 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      <Seo title="Home" />
+      <Seo title={data.datoCmsHome.seo && data.datoCmsHome.seo.title} description={data.datoCmsHome.seo && data.datoCmsHome.seo.description} image={data.datoCmsHome.seo.image.url} />
       <RenderStyle data={data.datoCmsHome.homeDescription} />
       <Press data={data.datoCmsHome.logosSection} />
       <Labels data={data.datoCmsHome.labels} />

@@ -1,12 +1,16 @@
 require('dotenv').config({path: __dirname + '/.env'})
 
-
+const siteUrl = `https://clever-pike-1dc0ed.netlify.app/`
 
 module.exports = {
   siteMetadata: {
     title: `Oatside`,
-    description: `Description`,
-    author: `Luisbtz`,
+    description: `Description Oatside`,
+    author: `Oatside`,
+    siteUrl,
+    social: {
+      twitter: `schaudustin`,
+    },
   },
   plugins: [
     `gatsby-plugin-styled-components`,
@@ -30,7 +34,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/assets/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/assets/images/favicon.png`, // This path is relative to the root of the site.
       },
     },
     {

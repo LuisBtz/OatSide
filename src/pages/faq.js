@@ -9,6 +9,13 @@ const IndexPage = () => {
   const data = useStaticQuery(graphql`
   query  {
     datoCmsFaq {
+      seo {
+      description
+      image {
+        url
+      }
+      title
+    }
       pageName
       fAQEditor
     }
@@ -16,7 +23,7 @@ const IndexPage = () => {
 `)
   return(
 <Layout>
-    <Seo title="Home" />
+<Seo title={data.datoCmsFaq.seo && data.datoCmsFaq.seo.title} description={data.datoCmsFaq.seo && data.datoCmsFaq.seo.description} image={data.datoCmsFaq.seo.image.url} />
     <Title>{data.datoCmsFaq.pageName}</Title>
     <Content dangerouslySetInnerHTML={{ __html: data.datoCmsFaq.fAQEditor }} />
   </Layout>
