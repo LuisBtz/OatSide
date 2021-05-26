@@ -37,7 +37,7 @@ const IndexPage = () => {
               }
               labels {
                 image {
-                  gatsbyImageData(layout: FULL_WIDTH)
+                  url
                   alt
                 }
                 id

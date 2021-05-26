@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components';
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 
 // markup
@@ -10,11 +9,10 @@ const Labels = ({data}) => {
   return (
         <ContainerLabels>
             {data.map(({image, id}) => {
-                  const getDataImage = getImage(image);
             return (
                 <Cont key={id} >
-                        <GatsbyImage
-                            image={getDataImage}
+                        <img
+                            src={image.url}
                             alt={image.alt ? image.alt : 'Oatside Label'}
                         />
                 </Cont>
