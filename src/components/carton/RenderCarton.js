@@ -49,7 +49,7 @@ class RenderCarton extends Component {
         controls.update();
         controls.enablePan = false;
         controls.enableZoom = false;
-        controls.maxPolarAngle= Math.PI / 2.5
+        controls.maxPolarAngle= 0
         controls.minPolarAngle= Math.PI / 2.5
 
 		const clock = new THREE.Clock();
