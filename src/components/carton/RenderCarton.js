@@ -76,13 +76,18 @@ class RenderCarton extends Component {
 	render() {
 		return (
 			<>
-				<div ref={ref => (this.mount = ref)} />
+				<Render ref={ref => (this.mount = ref)} />
 				<Text dangerouslySetInnerHTML={{ __html: this.props.data }} />
             </>
 		)
 	}
 
 }
+
+const Render = styled.div`
+	z-index: 5;
+	position: relative;
+`
 
 const Text = styled.h1`
 position: absolute;

@@ -51,7 +51,9 @@ const [show, setShow] = useState(false);
             </Final>
           </ul>
         </NavStyles>
+        <Link to='/'>
           <Logo src={logo} alt='Logo Oatside' />
+        </Link>
     </header>
     <Sidebar className={show ? 'show' : '' }>
       <Label src='/label.svg' alt='label oatside' 
@@ -131,7 +133,7 @@ const Final = styled.li`
 const Logo = styled.img`
   width: 60%;
   position: absolute;
-  z-index: -1;
+  z-index: 1;
   top: 100px;
   left: 50%;
   transform: translateX(-50%);
