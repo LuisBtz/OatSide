@@ -133,9 +133,13 @@ const Final = styled.li`
 const Logo = styled.img`
   width: 60%;
   position: absolute;
+  z-index: -1;
   top: 100px;
   left: 50%;
   transform: translateX(-50%);
+  @media (max-width: 750px) {
+    z-index: 1;
+  }
 `
 const Label = styled.img`
   position: absolute;
