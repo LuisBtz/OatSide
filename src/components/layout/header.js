@@ -166,7 +166,7 @@ const Sidebar = styled.div`
   background-color: var(--azul);
   padding: 30px 50px;
   box-sizing: border-box;
-  z-index: 2;
+  z-index: 999;
   transition: all 350ms ease-in-out;
   @media (max-width: 650px) {
     right: -70%;
