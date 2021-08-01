@@ -10,7 +10,7 @@ import Products from "../components/sections/Products"
 import Where from "../components/sections/Where"
 // import Graphic from "../components/sections/Graphic"
 // import Instagram from "../components/sections/Instagram"
-// import Sliderr from "../components/sections/Sliderr"
+import Sliderr from "../components/sections/Sliderr"
 
 
 
@@ -105,7 +105,7 @@ const IndexPage = () => {
       <Press data={data.datoCmsHome.logosSection} />
       <Labels data={data.datoCmsHome.labels} />
       <Products data={data.datoCmsHome} />
-      {/* <Sliderr /> */}
+      <Sliderr />
       <Where data={data.datoCmsHome} />
       {/* <Graphic data={data.datoCmsSetting.illustration} /> */}
       {/* <Instagram data={data.allInstagramContent.edges} insta={data.datoCmsSetting} /> */}
